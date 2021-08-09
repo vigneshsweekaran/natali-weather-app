@@ -4,7 +4,7 @@ from flask import render_template
 
 app = Flask(__name__)
 
-color = green
+color = "#16a085"
 
 @app.route("/")
 def hello():
