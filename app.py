@@ -9,10 +9,10 @@ color = "#16a085"
 @app.route("/")
 def hello():
 
-    url = "https://weatherapi-com.p.rapidapi.com/timezone.json"
+    url = "https://weatherapi-com.p.rapidapi.com/search.json"
     querystring = {"q":"<REQUIRED>"}
     headers = {
-        'x-rapidapi-key': "{x-rapidapi-key}",
+        'x-rapidapi-key': "cd1c88eda0msh32b10551c600641p14a147jsnc57be3d23020",
         'x-rapidapi-host': "weatherapi-com.p.rapidapi.com"
     }
     response = requests.request("GET", url, headers=headers, params=querystring)
