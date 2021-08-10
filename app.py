@@ -1,4 +1,5 @@
 import requests
+import json
 from flask import Flask
 from flask import render_template
 
@@ -17,7 +18,12 @@ def hello():
     }
     response = requests.request("GET", url, headers=headers, params=querystring)
     print(response.text)
-    return render_template('index.html', contents=response.text, color=color)
+
+    obj = json.loads(response.text)
+    json_formatted_str = json.dumps(obj, indent=4)
+    print(json_formatted_str)
+
+    return render_template('index.html', contents=json_formatted_str, color=color)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0",port=5000,debug=True,use_reloader=True)
