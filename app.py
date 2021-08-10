@@ -17,7 +17,7 @@ def hello():
     }
     response = requests.request("GET", url, headers=headers, params=querystring)
     print(response.text)
-    return render_template('index.html', contents=response.text, color=color)
+    return render_template('index.html', contents=response, color=color)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0",port=5000,debug=True,use_reloader=True)
